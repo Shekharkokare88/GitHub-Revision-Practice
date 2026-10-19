@@ -1,0 +1,9 @@
+name: helloo_practice
+on: workflow_dispatch
+
+jobs:
+  pritning_hello_jobs:
+   runs-on: ubuntu-latest
+   steps:
+    - name: hello-practice
+      run: echo "hello evenyone need practice"
