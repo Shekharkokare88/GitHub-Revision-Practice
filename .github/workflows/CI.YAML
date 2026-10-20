@@ -1,0 +1,21 @@
+name: CI
+  
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v7
+
+      - name: Set up Docker [Docker-Login]
+        uses: docker/setup-docker-action@v5
+        with:
+          username:${{vars.DOCKERHUB_USERNAME}}
+          password:${{secrets.DOCKERHUB_TOKEN}}
+
+
